@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
+import 'package:example/widget/refresh/refresh_notifier.dart';
 import 'package:mvc/base/base_controller.dart';
-import 'package:network/request/http_request.dart';
+import 'package:network/network.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:route/route/go_navigator.dart';
 
@@ -13,6 +14,8 @@ class HomeController extends BaseController<HomeModel> {
 
 extension Data on HomeController {
   Map<String, String> get routes => model.routes;
+
+  RefreshNotifier get refreshNotifier => model.refreshNotifier;
 }
 
 extension Action on HomeController {
@@ -54,5 +57,21 @@ extension Network on HomeController {
       onSuccess: (data) {},
       onFailed: (code, msg) {},
     );
+  }
+
+  Future<void> setupRefresh() async {
+    refreshNotifier.setup(
+      requestUrl: "https://www.baidu.com",
+      requestParams: {
+        "sourceType": "article",
+      },
+      pageSize: 10,
+      jsonParse: (json) =>
+          asList(json, "data").map((e) => ItemModel.fromJson(e)).toList(),
+      onBegin: (loadMore) {},
+      onSuccess: (data, loadMore) {},
+      onFailed: (code, error, loadMore) {},
+    );
+    await refreshNotifier.refresh();
   }
 }
