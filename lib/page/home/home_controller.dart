@@ -20,7 +20,7 @@ extension Data on HomeController {
 
 extension Action on HomeController {
   void onItemTap(int index) {
-    Go.go(routes.values.elementAt(index));
+    Go.to(routes.values.elementAt(index));
   }
 }
 

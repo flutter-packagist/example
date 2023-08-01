@@ -1,13 +1,16 @@
+import 'package:example/page/transition/next/transition_next_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:log_wrapper/log/log.dart';
 import 'package:route/route.dart';
+import 'package:route/route/route_extension.dart';
+import 'package:route/route/route_transition.dart';
 
+import '../page/arguments/get/arguments_get_page.dart';
+import '../page/arguments/set/arguments_set_page.dart';
 import '../page/home/home_page.dart';
 import '../page/tab/navigator/tab_navigator.dart';
-import '../page/tab/tab1/tab1_page.dart';
-import '../page/tab/tab2/tab2_page.dart';
-import 'route_navigator.dart';
+import '../page/transition/index/transition_page.dart';
 
 part 'app_routes.dart';
 
@@ -17,73 +20,94 @@ class AppPages {
   static final GoRouter router = GoRouter(
     navigatorKey: Go.key,
     observers: <NavigatorObserver>[GoNavigatorObserver(Go.routing)],
-    initialLocation: _Paths.home,
+    initialLocation: Paths.home,
     routes: <RouteBase>[
-      GoRoute(
-        path: _Paths.home,
-        builder: (BuildContext context, GoRouterState state) {
-          return const HomePage();
-        },
-      ),
-      statefulShellRoute(
-        containerBuilder: tabNavigatorBuilder,
-        branches: <StatefulShellBranch>[
-          StatefulShellBranch(
-            routes: <GoRoute>[
-              GoRoute(
-                path: _Paths.tab1,
-                pageBuilder: (BuildContext context, GoRouterState state) {
-                  return fadeTransition(state, const Tab1Page());
-                },
-              ),
-            ],
-          ),
-          StatefulShellBranch(
-            routes: <GoRoute>[
-              GoRoute(
-                path: _Paths.tab2,
-                pageBuilder: (BuildContext context, GoRouterState state) {
-                  return fadeTransition(state, const Tab2Page());
-                },
-              ),
-            ],
-            // preload: true,
-          ),
-        ],
-      ),
+      goRoute(path: Paths.home, child: const HomePage()),
+      goRoute(path: Paths.transition, child: const TransitionPage(), routes: [
+        goRoute(
+          path: Paths.none,
+          child: const TransitionNextPage(),
+          transitionType: PageTransitionType.none,
+        ),
+        goRoute(
+          path: Paths.fade,
+          child: const TransitionNextPage(),
+          transitionType: PageTransitionType.fade,
+        ),
+        goRoute(
+          path: Paths.scale,
+          child: const TransitionNextPage(),
+          transitionType: PageTransitionType.scale,
+        ),
+        goRoute(
+          path: Paths.rotate,
+          child: const TransitionNextPage(),
+          transitionType: PageTransitionType.rotate,
+        ),
+        goRoute(
+          path: Paths.size,
+          child: const TransitionNextPage(),
+          transitionType: PageTransitionType.size,
+        ),
+        goRoute(
+          path: Paths.right,
+          child: const TransitionNextPage(),
+          transitionType: PageTransitionType.right,
+        ),
+        goRoute(
+          path: Paths.left,
+          child: const TransitionNextPage(),
+          transitionType: PageTransitionType.left,
+        ),
+        goRoute(
+          path: Paths.top,
+          child: const TransitionNextPage(),
+          transitionType: PageTransitionType.top,
+        ),
+        goRoute(
+          path: Paths.bottom,
+          child: const TransitionNextPage(),
+          transitionType: PageTransitionType.bottom,
+        ),
+        goRoute(
+          path: Paths.rightFade,
+          child: const TransitionNextPage(),
+          transitionType: PageTransitionType.rightFade,
+        ),
+        goRoute(
+          path: Paths.leftFade,
+          child: const TransitionNextPage(),
+          transitionType: PageTransitionType.leftFade,
+        ),
+      ]),
+      goRoute(path: Paths.arguments, child: const ArgumentsSetPage(), routes: [
+        goRoute(
+          name: "namePushPath",
+          path: Paths.argumentsPath,
+          child: const ArgumentsGetPage(),
+        ),
+        goRoute(
+          name: "namePushQuery",
+          path: Paths.argumentsQuery,
+          child: const ArgumentsGetPage(),
+        ),
+        goRoute(
+          name: "nameGoPath",
+          path: Paths.argumentsPath,
+          child: const ArgumentsGetPage(),
+        ),
+        goRoute(
+          name: "nameGoQuery",
+          path: Paths.argumentsQuery,
+          child: const ArgumentsGetPage(),
+        ),
+      ]),
+      tabNavigatorRoute(),
     ],
     redirect: (BuildContext context, GoRouterState state) {
       logV("redirect: ${state.matchedLocation}");
       // no need to redirect at all
       return null;
-    },
-  );
-}
-
-/// 使用GO路由进行参数传递
-void passGoArguments(GoRouterState state) {
-  if (state.fullPath != Go.currentRoute) return;
-  Map<String, dynamic> args = <String, dynamic>{};
-  if (state.pathParameters.isNotEmpty) args.addAll(state.pathParameters);
-  if (state.uri.queryParameters.isNotEmpty) {
-    args.addAll(state.uri.queryParameters);
-  }
-  Go.routing.args = args;
-  logV("current route: ${Go.currentRoute}, arguments: $args");
-}
-
-/// 路由切换动画
-Page fadeTransition(GoRouterState state, Widget child) {
-  return CustomTransitionPage<void>(
-    key: state.pageKey,
-    child: child,
-    transitionDuration: const Duration(milliseconds: 150),
-    transitionsBuilder: (BuildContext context, Animation<double> animation,
-        Animation<double> secondaryAnimation, Widget child) {
-      return FadeTransition(
-        opacity: CurveTween(curve: Curves.easeInOut).animate(animation),
-        child: child,
-      );
     },
   );
 }

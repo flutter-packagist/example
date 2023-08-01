@@ -13,6 +13,14 @@ class HomePage extends BasePage<HomeController, HomeModel> {
   HomeController putController() => Get.put(HomeController());
 
   @override
+  Color get backgroundColor => Colors.white;
+
+  @override
+  Widget? get appBar => AppBar(
+        title: const Text('示例'),
+      );
+
+  @override
   Widget get body {
     return WrapperEasyRefresh(
       refreshNotifier: controller.refreshNotifier,
