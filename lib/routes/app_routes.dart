@@ -5,6 +5,9 @@ abstract class Routes {
   static const tab = Paths.tab;
   static const tab1 = Paths.tab1;
   static const tab2 = Paths.tab2;
+  static const nav = Paths.nav;
+  static const nav1 = Paths.nav1;
+  static const nav2 = Paths.nav2;
   static const transition = Paths.transition;
   static const transitionNone = "${Paths.transition}/${Paths.none}";
   static const transitionFade = "${Paths.transition}/${Paths.fade}";
@@ -27,6 +30,9 @@ abstract class Paths {
   static const tab = '/tab';
   static const tab1 = '/tab1';
   static const tab2 = '/tab2';
+  static const nav = '/nav';
+  static const nav1 = '/nav1';
+  static const nav2 = '/nav2';
   static const transition = '/transition';
   static const none = 'none';
   static const fade = 'fade';

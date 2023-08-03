@@ -1,4 +1,3 @@
-import 'package:example/page/transition/next/transition_next_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:log_wrapper/log/log.dart';
@@ -9,8 +8,10 @@ import 'package:route/route/route_transition.dart';
 import '../page/arguments/get/arguments_get_page.dart';
 import '../page/arguments/set/arguments_set_page.dart';
 import '../page/home/home_page.dart';
+import '../page/nested/page/page_navigator.dart';
 import '../page/nested/tab/tab_navigator.dart';
 import '../page/transition/index/transition_page.dart';
+import '../page/transition/next/transition_next_page.dart';
 
 part 'app_routes.dart';
 
@@ -103,6 +104,7 @@ class AppPages {
         ),
       ]),
       tabNavigatorRoute(),
+      pageNavigatorRoute(),
     ],
     redirect: (BuildContext context, GoRouterState state) {
       logV("redirect: ${state.matchedLocation}");

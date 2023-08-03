@@ -6,17 +6,19 @@ import 'detail_controller.dart';
 import 'detail_model.dart';
 
 class DetailPage extends BasePage<DetailController, DetailModel> {
-  const DetailPage({super.key});
+  final String title;
+
+  const DetailPage(this.title, {super.key});
 
   @override
   DetailController putController() => Get.put(DetailController());
 
   @override
   Widget get body {
-    return const Center(
+    return Center(
       child: Text(
-        'DetailPage',
-        style: TextStyle(color: Colors.black),
+        title,
+        style: const TextStyle(color: Colors.black),
       ),
     );
   }
