@@ -8,6 +8,7 @@ class MainModel extends BaseModel {
       RefreshNotifier<ItemModel>();
 
   Map<String, String> routes = {
+    "MVC示例": Routes.mvc,
     "路由 Navigator 2.0（StatefulShellRoute）: TabBar和TabBarView同步切换，支持滑动页面切换浏览器地址":
         GetPlatform.isWeb ? Routes.tab1 : Routes.tab,
     "路由 Navigator 2.0（StatefulShellRoute）: BottomNavigationBar和PageView同步切换，支持滑动页面切换浏览器地址":
@@ -20,6 +21,7 @@ class MainModel extends BaseModel {
     "页面调整动画": Routes.transition,
     "页面路由监听": Routes.dialog,
     "路由拦截和重定向": Routes.redirect,
+    "404页面": Routes.notFound,
   };
 }
 

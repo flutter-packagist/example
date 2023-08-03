@@ -1,7 +1,8 @@
 part of 'app_pages.dart';
 
 abstract class Routes {
-  static const home = Paths.home;
+  static const main = Paths.main;
+  static const mvc = Paths.mvc;
   static const tab = Paths.tab;
   static const tab1 = Paths.tab1;
   static const tab2 = Paths.tab2;
@@ -36,7 +37,8 @@ abstract class Routes {
 }
 
 abstract class Paths {
-  static const home = '/home';
+  static const main = '/main';
+  static const mvc = '/mvc';
   static const tab = '/tab';
   static const tab1 = '/tab1';
   static const tab2 = '/tab2';

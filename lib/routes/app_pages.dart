@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:log_wrapper/log/log.dart';
 import 'package:route/route.dart';
-import 'package:route/route/route_extension.dart';
 import 'package:route/route/route_transition.dart';
 
 import '../page/arguments/get/arguments_get_page.dart';
 import '../page/arguments/set/arguments_set_page.dart';
 import '../page/main/main_page.dart';
+import '../page/mvc/mvc_page.dart';
 import '../page/nested/page/page_navigator.dart';
 import '../page/nested/shell/shell_navigator.dart';
 import '../page/nested/stack/stack_navigator.dart';
@@ -30,9 +30,10 @@ class AppPages {
       GoNavigatorObserver(Go.routing),
       DialogObserver(),
     ],
-    initialLocation: Paths.home,
+    initialLocation: Paths.main,
     routes: <RouteBase>[
-      goRoute(path: Paths.home, child: const MainPage()),
+      goRoute(path: Paths.main, child: const MainPage()),
+      goRoute(path: Paths.mvc, child: const MvcPage()),
       goRoute(path: Paths.transition, child: const TransitionPage(), routes: [
         goRoute(
           path: Paths.none,
