@@ -12,6 +12,8 @@ import '../page/nested/page/page_navigator.dart';
 import '../page/nested/shell/shell_navigator.dart';
 import '../page/nested/stack/stack_navigator.dart';
 import '../page/nested/tab/tab_navigator.dart';
+import '../page/observer/dialog_observer.dart';
+import '../page/observer/dialog_page.dart';
 import '../page/transition/index/transition_page.dart';
 import '../page/transition/next/transition_next_page.dart';
 
@@ -22,7 +24,10 @@ class AppPages {
 
   static final GoRouter router = GoRouter(
     navigatorKey: Go.key,
-    observers: <NavigatorObserver>[GoNavigatorObserver(Go.routing)],
+    observers: <NavigatorObserver>[
+      GoNavigatorObserver(Go.routing),
+      DialogObserver(),
+    ],
     initialLocation: Paths.home,
     routes: <RouteBase>[
       goRoute(path: Paths.home, child: const HomePage()),
@@ -119,6 +124,7 @@ class AppPages {
       pageNavigatorRoute(),
       stackNavigatorRoute(),
       shellNavigatorRoute(),
+      goRoute(path: Paths.dialog, child: const DialogPage()),
     ],
     redirect: (BuildContext context, GoRouterState state) {
       logV("redirect: ${state.matchedLocation}");

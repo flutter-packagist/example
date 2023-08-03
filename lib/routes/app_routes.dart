@@ -30,6 +30,7 @@ abstract class Routes {
   static const argumentsParams = "${Paths.arguments}/${Paths.argumentsParams}";
   static const argumentsPath = "${Paths.arguments}/${Paths.argumentsPath}";
   static const argumentsQuery = "${Paths.arguments}/${Paths.argumentsQuery}";
+  static const dialog = Paths.dialog;
 }
 
 abstract class Paths {
@@ -62,5 +63,6 @@ abstract class Paths {
   static const argumentsParams = 'params';
   static const argumentsPath = 'path/:title/:url';
   static const argumentsQuery = 'query';
+  static const dialog = '/dialog';
   static const notFound = '/404';
 }

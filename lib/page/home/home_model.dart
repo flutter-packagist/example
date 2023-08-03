@@ -18,6 +18,7 @@ class HomeModel extends BaseModel {
         GetPlatform.isWeb ? Routes.shell1 : Routes.shell,
     "路由参数传递": Routes.arguments,
     "页面调整动画": Routes.transition,
+    "页面路由监听": Routes.dialog,
   };
 }
 
