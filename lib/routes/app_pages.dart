@@ -85,6 +85,11 @@ class AppPages {
       ]),
       goRoute(path: Paths.arguments, child: const ArgumentsSetPage(), routes: [
         goRoute(
+          name: "namePushParams",
+          path: Paths.argumentsParams,
+          child: const ArgumentsGetPage(),
+        ),
+        goRoute(
           name: "namePushPath",
           path: Paths.argumentsPath,
           child: const ArgumentsGetPage(),
@@ -92,6 +97,11 @@ class AppPages {
         goRoute(
           name: "namePushQuery",
           path: Paths.argumentsQuery,
+          child: const ArgumentsGetPage(),
+        ),
+        goRoute(
+          name: "nameGoParams",
+          path: Paths.argumentsParams,
           child: const ArgumentsGetPage(),
         ),
         goRoute(

@@ -19,96 +19,27 @@ class ArgumentsSetPage
 
   @override
   Widget get body {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          TextButton(
-            onPressed: controller.onPushQueryParamsBtnTap,
-            child: const Text(
-              'push 设置 queryParams',
-              style: TextStyle(color: Colors.black),
+    return ListView.builder(
+      itemCount: controller.routes.length + 1,
+      itemBuilder: (context, index) {
+        if (index == 0) {
+          return ListTile(
+            tileColor: Colors.blue.shade300,
+            title: Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Text(
+                controller.description,
+                style: const TextStyle(color: Colors.white),
+              ),
             ),
-          ),
-          TextButton(
-            onPressed: controller.onPushPathParamsBtnTap,
-            child: const Text(
-              'push 设置 pathParams',
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
-          TextButton(
-            onPressed: controller.onGoQueryParamsBtnTap,
-            child: const Text(
-              'go 设置 queryParams',
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
-          TextButton(
-            onPressed: controller.onGoPathParamsBtnTap,
-            child: const Text(
-              'go 设置 pathParams',
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
-          TextButton(
-            onPressed: controller.onToQueryParamsBtnTap,
-            child: const Text(
-              'to 设置 queryParams',
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
-          TextButton(
-            onPressed: controller.onToPathParamsBtnTap,
-            child: const Text(
-              'to 设置 pathParams',
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
-          TextButton(
-            onPressed: controller.onPushNameQueryParamsBtnTap,
-            child: const Text(
-              'push name 设置 queryParams',
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
-          TextButton(
-            onPressed: controller.onPushNamePathParamsBtnTap,
-            child: const Text(
-              'push name 设置 pathParams',
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
-          TextButton(
-            onPressed: controller.onGoNameQueryParamsBtnTap,
-            child: const Text(
-              'go name 设置 queryParams',
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
-          TextButton(
-            onPressed: controller.onGoNamePathParamsBtnTap,
-            child: const Text(
-              'go name 设置 pathParams',
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
-          TextButton(
-            onPressed: controller.onToNameQueryParamsBtnTap,
-            child: const Text(
-              'to name 设置 queryParams',
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
-          TextButton(
-            onPressed: controller.onToNamePathParamsBtnTap,
-            child: const Text(
-              'to name 设置 pathParams',
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
-        ],
-      ),
+          );
+        }
+        return ListTile(
+          tileColor: index % 2 == 0 ? Colors.white : Colors.grey[200],
+          title: Text(controller.routes.keys.elementAt(index - 1)),
+          onTap: () => controller.onItemTap(index - 1),
+        );
+      },
     );
   }
 }

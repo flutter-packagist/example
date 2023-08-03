@@ -27,6 +27,7 @@ abstract class Routes {
   static const transitionRightFade = "${Paths.transition}/${Paths.rightFade}";
   static const transitionLeftFade = "${Paths.transition}/${Paths.leftFade}";
   static const arguments = Paths.arguments;
+  static const argumentsParams = "${Paths.arguments}/${Paths.argumentsParams}";
   static const argumentsPath = "${Paths.arguments}/${Paths.argumentsPath}";
   static const argumentsQuery = "${Paths.arguments}/${Paths.argumentsQuery}";
 }
@@ -58,6 +59,7 @@ abstract class Paths {
   static const rightFade = 'rightFade';
   static const leftFade = 'leftFade';
   static const arguments = '/arguments';
+  static const argumentsParams = 'params';
   static const argumentsPath = 'path/:title/:url';
   static const argumentsQuery = 'query';
   static const notFound = '/404';
