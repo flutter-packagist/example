@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mvc/base/base_page.dart';
 
-import 'home_controller.dart';
-import 'home_model.dart';
+import 'main_controller.dart';
+import 'main_model.dart';
 
-class HomePage extends BasePage<HomeController, HomeModel> {
-  const HomePage({super.key});
+class MainPage extends BasePage<MainController, MainModel> {
+  const MainPage({super.key});
 
   @override
-  HomeController putController() => Get.put(HomeController());
+  MainController putController() => Get.put(MainController());
 
   @override
   Color get backgroundColor => Colors.white;

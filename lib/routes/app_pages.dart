@@ -7,13 +7,15 @@ import 'package:route/route/route_transition.dart';
 
 import '../page/arguments/get/arguments_get_page.dart';
 import '../page/arguments/set/arguments_set_page.dart';
-import '../page/home/home_page.dart';
+import '../page/main/main_page.dart';
 import '../page/nested/page/page_navigator.dart';
 import '../page/nested/shell/shell_navigator.dart';
 import '../page/nested/stack/stack_navigator.dart';
 import '../page/nested/tab/tab_navigator.dart';
+import '../page/notfound/notfound_page.dart';
 import '../page/observer/dialog_observer.dart';
 import '../page/observer/dialog_page.dart';
+import '../page/redirect/redirect_page.dart';
 import '../page/transition/index/transition_page.dart';
 import '../page/transition/next/transition_next_page.dart';
 
@@ -30,7 +32,7 @@ class AppPages {
     ],
     initialLocation: Paths.home,
     routes: <RouteBase>[
-      goRoute(path: Paths.home, child: const HomePage()),
+      goRoute(path: Paths.home, child: const MainPage()),
       goRoute(path: Paths.transition, child: const TransitionPage(), routes: [
         goRoute(
           path: Paths.none,
@@ -125,11 +127,20 @@ class AppPages {
       stackNavigatorRoute(),
       shellNavigatorRoute(),
       goRoute(path: Paths.dialog, child: const DialogPage()),
+      goRoute(path: Paths.redirect, child: const RedirectPage()),
+      goRoute(path: Paths.notFound, child: const NotFoundPage()),
     ],
     redirect: (BuildContext context, GoRouterState state) {
       logV("redirect: ${state.matchedLocation}");
+      if (state.matchedLocation == "/login") {
+        return Routes.redirect;
+      }
+
       // no need to redirect at all
       return null;
+    },
+    onException: (context, GoRouterState state, GoRouter router) {
+      router.go(Routes.notFound, extra: {"uri": state.uri.toString()});
     },
   );
 }

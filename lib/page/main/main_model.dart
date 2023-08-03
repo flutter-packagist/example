@@ -3,7 +3,7 @@ import 'package:example/widget/refresh/refresh_notifier.dart';
 import 'package:get/get.dart';
 import 'package:mvc/base/base_model.dart';
 
-class HomeModel extends BaseModel {
+class MainModel extends BaseModel {
   final RefreshNotifier<ItemModel> refreshNotifier =
       RefreshNotifier<ItemModel>();
 
@@ -19,6 +19,7 @@ class HomeModel extends BaseModel {
     "路由参数传递": Routes.arguments,
     "页面调整动画": Routes.transition,
     "页面路由监听": Routes.dialog,
+    "路由拦截和重定向": Routes.redirect,
   };
 }
 

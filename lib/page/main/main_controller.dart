@@ -5,26 +5,26 @@ import 'package:network/network.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:route/route/go_navigator.dart';
 
-import 'home_model.dart';
+import 'main_model.dart';
 
-class HomeController extends BaseController<HomeModel> {
+class MainController extends BaseController<MainModel> {
   @override
-  HomeModel model = HomeModel();
+  MainModel model = MainModel();
 }
 
-extension Data on HomeController {
+extension Data on MainController {
   Map<String, String> get routes => model.routes;
 
   RefreshNotifier get refreshNotifier => model.refreshNotifier;
 }
 
-extension Action on HomeController {
+extension Action on MainController {
   void onItemTap(int index) {
     Go.to(routes.values.elementAt(index));
   }
 }
 
-extension Network on HomeController {
+extension Network on MainController {
   Future get() async {
     await HttpRequest().get(
       'https://www.baidu.com',
