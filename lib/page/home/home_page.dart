@@ -28,6 +28,7 @@ class HomePage extends BasePage<HomeController, HomeModel> {
         itemCount: controller.routes.length,
         itemBuilder: (context, index) {
           return ListTile(
+            tileColor: index % 2 == 0 ? Colors.white : Colors.grey[200],
             title: Text(controller.routes.keys.elementAt(index)),
             onTap: () => controller.onItemTap(index),
           );

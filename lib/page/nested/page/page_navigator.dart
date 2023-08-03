@@ -14,19 +14,19 @@ RouteBase pageNavigatorRoute() {
           PageNavigatorWeb(navigationShell, children),
       branches: <StatefulShellBranch>[
         StatefulShellBranch(routes: <GoRoute>[
-          goRoute(path: Paths.nav1, child: const DetailPage("Nav1")),
+          goRoute(path: Paths.page1, child: const DetailPage("Page1")),
         ]),
         StatefulShellBranch(routes: <GoRoute>[
-          goRoute(path: Paths.nav2, child: const DetailPage("Nav2")),
+          goRoute(path: Paths.page2, child: const DetailPage("Page2")),
         ]),
       ],
     );
   }
   return goRoute(
-    path: Paths.nav,
+    path: Paths.page,
     child: const PageNavigatorNative([
-      DetailPage("Nav1"),
-      DetailPage("Nav2"),
+      DetailPage("Page1"),
+      DetailPage("Page2"),
     ]),
   );
 }

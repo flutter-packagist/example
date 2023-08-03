@@ -9,6 +9,8 @@ import '../page/arguments/get/arguments_get_page.dart';
 import '../page/arguments/set/arguments_set_page.dart';
 import '../page/home/home_page.dart';
 import '../page/nested/page/page_navigator.dart';
+import '../page/nested/shell/shell_navigator.dart';
+import '../page/nested/stack/stack_navigator.dart';
 import '../page/nested/tab/tab_navigator.dart';
 import '../page/transition/index/transition_page.dart';
 import '../page/transition/next/transition_next_page.dart';
@@ -105,6 +107,8 @@ class AppPages {
       ]),
       tabNavigatorRoute(),
       pageNavigatorRoute(),
+      stackNavigatorRoute(),
+      shellNavigatorRoute(),
     ],
     redirect: (BuildContext context, GoRouterState state) {
       logV("redirect: ${state.matchedLocation}");
