@@ -34,6 +34,7 @@ abstract class Routes {
   static const dialog = Paths.dialog;
   static const redirect = Paths.redirect;
   static const notFound = Paths.notFound;
+  static const network = Paths.network;
 }
 
 abstract class Paths {
@@ -70,4 +71,5 @@ abstract class Paths {
   static const dialog = '/dialog';
   static const redirect = '/redirect';
   static const notFound = '/404';
+  static const network = '/network';
 }

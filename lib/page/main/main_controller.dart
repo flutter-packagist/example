@@ -1,8 +1,6 @@
-import 'package:dio/dio.dart';
 import 'package:example/widget/refresh/refresh_notifier.dart';
 import 'package:mvc/base/base_controller.dart';
 import 'package:network/network.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:route/route/go_navigator.dart';
 
 import 'main_model.dart';
@@ -25,40 +23,6 @@ extension Action on MainController {
 }
 
 extension Network on MainController {
-  Future get() async {
-    await HttpRequest().get(
-      'https://www.baidu.com',
-      onSuccess: (data) {},
-      onFailed: (code, msg) {},
-    );
-  }
-
-  Future upload() async {
-    await HttpRequest().post(
-      'https://www.baidu.com',
-      formData: {
-        'name': 'dio',
-        'date': DateTime.now().toIso8601String(),
-        'file': await MultipartFile.fromFile(
-          './text.txt',
-          filename: 'upload.txt',
-        ),
-      },
-      onSuccess: (data) {},
-      onFailed: (code, msg) {},
-    );
-  }
-
-  Future download() async {
-    await HttpRequest().download(
-      'https://www.baidu.com',
-      '${(await getTemporaryDirectory()).path}pub.html',
-      onReceiveProgress: (count, total) {},
-      onSuccess: (data) {},
-      onFailed: (code, msg) {},
-    );
-  }
-
   Future<void> setupRefresh() async {
     refreshNotifier.setup(
       requestUrl: "https://www.baidu.com",

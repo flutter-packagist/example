@@ -22,6 +22,7 @@ class MainModel extends BaseModel {
     "页面路由监听": Routes.dialog,
     "路由拦截和重定向": Routes.redirect,
     "404页面": Routes.notFound,
+    "网络请求": Routes.network,
   };
 }
 

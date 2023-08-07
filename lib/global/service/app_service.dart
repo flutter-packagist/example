@@ -26,6 +26,7 @@ class AppService {
       interceptors: [
         RetryOnConnectionChangeInterceptor(),
         DioLogInterceptor(),
+        CancelTokenInterceptor(),
       ],
     ));
   }

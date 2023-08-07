@@ -12,6 +12,7 @@ import '../page/nested/page/page_navigator.dart';
 import '../page/nested/shell/shell_navigator.dart';
 import '../page/nested/stack/stack_navigator.dart';
 import '../page/nested/tab/tab_navigator.dart';
+import '../page/network/network_page.dart';
 import '../page/notfound/notfound_page.dart';
 import '../page/observer/dialog_observer.dart';
 import '../page/observer/dialog_page.dart';
@@ -130,6 +131,7 @@ class AppPages {
       goRoute(path: Paths.dialog, child: const DialogPage()),
       goRoute(path: Paths.redirect, child: const RedirectPage()),
       goRoute(path: Paths.notFound, child: const NotFoundPage()),
+      goRoute(path: Paths.network, child: const NetworkPage()),
     ],
     redirect: (BuildContext context, GoRouterState state) {
       logV("redirect: ${state.matchedLocation}");

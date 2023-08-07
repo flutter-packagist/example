@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: "100Demo",
+      title: "Demo",
       routerConfig: AppPages.router,
       builder: (context, widget) {
         return OKToast(child: widget!);
