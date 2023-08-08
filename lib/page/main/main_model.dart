@@ -23,6 +23,7 @@ class MainModel extends BaseModel {
     "路由拦截和重定向": Routes.redirect,
     "404页面": Routes.notFound,
     "网络请求": Routes.network,
+    "权限请求": Routes.permission,
   };
 }
 
