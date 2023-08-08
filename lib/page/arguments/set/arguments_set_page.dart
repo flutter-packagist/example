@@ -14,7 +14,7 @@ class ArgumentsSetPage
 
   @override
   Widget? get appBar => AppBar(
-        title: const Text('ArgumentsSetPage'),
+        title: const Text('参数设置'),
       );
 
   @override

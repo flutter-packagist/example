@@ -18,7 +18,8 @@ class EnvConfig {
 
   /// 接口host
   static String get host {
-    return "";
+    return 'http://192.168.3.1:8080';
+    return "http://localhost:8080/";
   }
 
   /// 网络请求日志打印

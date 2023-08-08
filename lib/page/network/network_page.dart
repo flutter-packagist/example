@@ -13,16 +13,32 @@ class NetworkPage extends BasePage<NetworkController, NetworkModel> {
 
   @override
   Widget? get appBar => AppBar(
-        title: const Text('示例'),
+        title: const Text('网络请求'),
       );
 
   @override
   Widget get body {
-    return Center(
-      child: TextButton(
-        child: const Text('上传'),
-        onPressed: () => controller.pickFile(),
-      ),
+    return ListView.builder(
+      itemCount: controller.routes.length + 1,
+      itemBuilder: (context, index) {
+        if (index == 0) {
+          return ListTile(
+            tileColor: Colors.blue.shade300,
+            title: Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Text(
+                controller.description,
+                style: const TextStyle(color: Colors.white),
+              ),
+            ),
+          );
+        }
+        return ListTile(
+          tileColor: index % 2 == 0 ? Colors.white : Colors.grey[200],
+          title: Text(controller.routes.keys.elementAt(index - 1)),
+          onTap: () => controller.routes.values.elementAt(index - 1)(),
+        );
+      },
     );
   }
 }

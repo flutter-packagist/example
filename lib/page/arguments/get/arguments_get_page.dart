@@ -13,7 +13,7 @@ class ArgumentsGetPage extends BasePage<ArgumentsGetController, ArgumentsGetMode
 
   @override
   Widget? get appBar => AppBar(
-        title: const Text('ArgumentsGetPage'),
+        title: const Text('参数获取'),
       );
 
   @override
