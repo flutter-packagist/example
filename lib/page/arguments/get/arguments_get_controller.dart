@@ -10,8 +10,8 @@ class ArgumentsGetController extends BaseController<ArgumentsGetModel> {
   @override
   void onReady() {
     super.onReady();
-    model.title = Go.routing.args['title'];
-    model.url = Go.routing.args['url'];
+    model.title = Go.arguments['title'] ?? "null";
+    model.url = Go.arguments['url'] ?? "null";
     update();
   }
 }

@@ -1,4 +1,4 @@
-import 'package:extensions/permission_ext.dart';
+import 'package:extensions/permission_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:log_wrapper/log/log.dart';
 import 'package:mvc/base/base_controller.dart';

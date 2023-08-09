@@ -23,7 +23,7 @@ class PermissionModel extends BaseModel {
           permission != Permission.audio &&
           permission != Permission.scheduleExactAlarm &&
           permission != Permission.sensorsAlways;
-    } else {
+    } else if (GetPlatform.isAndroid) {
       return permission != Permission.unknown &&
           permission != Permission.mediaLibrary &&
           permission != Permission.photosAddOnly &&
@@ -32,6 +32,7 @@ class PermissionModel extends BaseModel {
           permission != Permission.appTrackingTransparency &&
           permission != Permission.criticalAlerts;
     }
+    return false;
   }).toList();
 
   List<PermissionStatus> permissionStatusList = [];
