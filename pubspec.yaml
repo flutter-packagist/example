@@ -33,6 +33,8 @@ dependencies:
     path: ../route
   cache:
     path: ../cache
+  extensions:
+    path: ../extensions
 
 dev_dependencies:
   flutter_test:
