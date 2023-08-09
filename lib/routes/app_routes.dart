@@ -36,6 +36,7 @@ abstract class Routes {
   static const notFound = Paths.notFound;
   static const network = Paths.network;
   static const permission = Paths.permission;
+  static const refresh = Paths.refresh;
 }
 
 abstract class Paths {
@@ -74,4 +75,5 @@ abstract class Paths {
   static const notFound = '/404';
   static const network = '/network';
   static const permission = '/permission';
+  static const refresh = '/refresh';
 }

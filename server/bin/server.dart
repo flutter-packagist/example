@@ -13,12 +13,12 @@
 // limitations under the License.
 
 import 'dart:async' show Future;
+import 'dart:convert';
 
-import 'package:shelf/shelf.dart';
 import 'package:shelf/shelf_io.dart' as shelf_io;
 import 'package:shelf_multipart/form_data.dart';
 import 'package:shelf_multipart/multipart.dart';
-import 'package:shelf_router/shelf_router.dart';
+import 'package:shelf_plus/shelf_plus.dart';
 
 // Generated code will be written to 'main.g.dart'
 part 'server.g.dart';
@@ -62,6 +62,19 @@ class Service {
       }
       return Response.ok(description.toString());
     }
+  }
+
+  @Route.get('/list')
+  Response _list(Request request) {
+    final query = request.url.queryParameters;
+    final page = int.parse(query['page'] ?? '1');
+    final limit = page > 3 ? 0 : int.parse(query['limit'] ?? '10');
+    final list = List.generate(
+        limit, (index) => {'title': "${(page - 1) * limit + index}"});
+    return Response.ok(
+      jsonEncode({'data': list}),
+      headers: {'Content-Type': 'application/json'},
+    );
   }
 
   // A handler is annotated with @Route.<verb>('<route>'), the '<route>' may

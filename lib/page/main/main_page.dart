@@ -1,4 +1,3 @@
-import 'package:example/widget/refresh/refresh.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mvc/base/base_page.dart';
@@ -22,18 +21,16 @@ class MainPage extends BasePage<MainController, MainModel> {
 
   @override
   Widget get body {
-    return WrapperEasyRefresh(
-      refreshNotifier: controller.refreshNotifier,
-      child: ListView.builder(
-        itemCount: controller.routes.length,
-        itemBuilder: (context, index) {
-          return ListTile(
-            tileColor: index % 2 == 0 ? Colors.white : Colors.grey[200],
-            title: Text(controller.routes.keys.elementAt(index)),
-            onTap: () => controller.onItemTap(index),
-          );
-        },
-      ),
+    return ListView.builder(
+      padding: const EdgeInsets.only(bottom: 50),
+      itemCount: controller.routes.length,
+      itemBuilder: (context, index) {
+        return ListTile(
+          tileColor: index % 2 == 0 ? Colors.white : Colors.grey[200],
+          title: Text(controller.routes.keys.elementAt(index)),
+          onTap: () => controller.onItemTap(index),
+        );
+      },
     );
   }
 }

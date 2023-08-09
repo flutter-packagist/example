@@ -18,7 +18,7 @@ class EnvConfig {
 
   /// 接口host
   static String get host {
-    return 'http://192.168.3.1:8080';
+    // return 'http://192.168.2.9:8080/';
     return "http://localhost:8080/";
   }
 

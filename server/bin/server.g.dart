@@ -40,6 +40,11 @@ Router _$ServiceRouter(Service service) {
   );
   router.add(
     'GET',
+    r'/list',
+    service._list,
+  );
+  router.add(
+    'GET',
     r'/say-hi/<name>',
     service._hi,
   );

@@ -18,6 +18,7 @@ import '../page/observer/dialog_observer.dart';
 import '../page/observer/dialog_page.dart';
 import '../page/permission/permission_page.dart';
 import '../page/redirect/redirect_page.dart';
+import '../page/refresh/refresh_page.dart';
 import '../page/transition/index/transition_page.dart';
 import '../page/transition/next/transition_next_page.dart';
 
@@ -134,6 +135,7 @@ class AppPages {
       goRoute(path: Paths.notFound, child: const NotFoundPage()),
       goRoute(path: Paths.network, child: const NetworkPage()),
       goRoute(path: Paths.permission, child: const PermissionPage()),
+      goRoute(path: Paths.refresh, child: const RefreshPage()),
     ],
     redirect: (BuildContext context, GoRouterState state) {
       logV("redirect: ${state.matchedLocation}");

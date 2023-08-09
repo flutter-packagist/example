@@ -1,12 +1,8 @@
 import 'package:example/routes/app_pages.dart';
-import 'package:example/widget/refresh/refresh_notifier.dart';
 import 'package:get/get.dart';
 import 'package:mvc/base/base_model.dart';
 
 class MainModel extends BaseModel {
-  final RefreshNotifier<ItemModel> refreshNotifier =
-      RefreshNotifier<ItemModel>();
-
   Map<String, String> routes = {
     "MVC示例": Routes.mvc,
     "路由 Navigator 2.0（StatefulShellRoute）: TabBar和TabBarView同步切换，支持滑动页面切换浏览器地址":
@@ -24,21 +20,6 @@ class MainModel extends BaseModel {
     "404页面": Routes.notFound,
     "网络请求": Routes.network,
     "权限请求": Routes.permission,
+    "下拉刷新和上拉加载更多": Routes.refresh,
   };
-}
-
-class ItemModel {
-  String title;
-  String subTitle;
-  String route;
-
-  ItemModel(this.title, this.subTitle, this.route);
-
-  factory ItemModel.fromJson(Map<String, dynamic> json) {
-    return ItemModel(
-      json['title'],
-      json['subTitle'],
-      json['route'],
-    );
-  }
 }
