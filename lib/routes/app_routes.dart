@@ -37,6 +37,7 @@ abstract class Routes {
   static const network = Paths.network;
   static const permission = Paths.permission;
   static const refresh = Paths.refresh;
+  static const database = Paths.database;
 }
 
 abstract class Paths {
@@ -76,4 +77,5 @@ abstract class Paths {
   static const network = '/network';
   static const permission = '/permission';
   static const refresh = '/refresh';
+  static const database = '/database';
 }
