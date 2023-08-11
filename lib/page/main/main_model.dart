@@ -22,6 +22,6 @@ class MainModel extends BaseModel {
     "权限请求": Routes.permission,
     "下拉刷新和上拉加载更多": Routes.refresh,
     "数据库操作": Routes.database,
-    "Listener": Routes.listener,
+    "事件防抖和节流": Routes.gesture,
   };
 }

@@ -7,7 +7,7 @@ import 'package:route/route/route_transition.dart';
 import '../page/arguments/get/arguments_get_page.dart';
 import '../page/arguments/set/arguments_set_page.dart';
 import '../page/database/database_page.dart';
-import '../page/listener/gesture_page.dart';
+import '../page/gesture/gesture_page.dart';
 import '../page/main/main_page.dart';
 import '../page/mvc/mvc_page.dart';
 import '../page/nested/page/page_navigator.dart';
@@ -139,7 +139,7 @@ class AppPages {
       goRoute(path: Paths.permission, child: const PermissionPage()),
       goRoute(path: Paths.refresh, child: const RefreshPage()),
       goRoute(path: Paths.database, child: const DatabasePage()),
-      goRoute(path: Paths.listener, child: const GesturePage()),
+      goRoute(path: Paths.gesture, child: const GesturePage()),
     ],
     redirect: (BuildContext context, GoRouterState state) {
       logV("redirect: ${state.matchedLocation}");

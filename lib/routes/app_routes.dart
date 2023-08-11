@@ -38,7 +38,7 @@ abstract class Routes {
   static const permission = Paths.permission;
   static const refresh = Paths.refresh;
   static const database = Paths.database;
-  static const listener = Paths.listener;
+  static const gesture = Paths.gesture;
 }
 
 abstract class Paths {
@@ -79,5 +79,5 @@ abstract class Paths {
   static const permission = '/permission';
   static const refresh = '/refresh';
   static const database = '/database';
-  static const listener = '/listener';
+  static const gesture = '/gesture';
 }
