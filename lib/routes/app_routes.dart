@@ -39,6 +39,7 @@ abstract class Routes {
   static const refresh = Paths.refresh;
   static const database = Paths.database;
   static const gesture = Paths.gesture;
+  static const repeat = Paths.repeat;
 }
 
 abstract class Paths {
@@ -80,4 +81,5 @@ abstract class Paths {
   static const refresh = '/refresh';
   static const database = '/database';
   static const gesture = '/gesture';
+  static const repeat = '/repeat';
 }

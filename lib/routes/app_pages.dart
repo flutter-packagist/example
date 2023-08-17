@@ -21,6 +21,7 @@ import '../page/observer/dialog_page.dart';
 import '../page/permission/permission_page.dart';
 import '../page/redirect/redirect_page.dart';
 import '../page/refresh/refresh_page.dart';
+import '../page/repeat/repeat_page.dart';
 import '../page/transition/index/transition_page.dart';
 import '../page/transition/next/transition_next_page.dart';
 
@@ -140,6 +141,7 @@ class AppPages {
       goRoute(path: Paths.refresh, child: const RefreshPage()),
       goRoute(path: Paths.database, child: const DatabasePage()),
       goRoute(path: Paths.gesture, child: const GesturePage()),
+      goRoute(path: Paths.repeat, child: const RepeatPage()),
     ],
     redirect: (BuildContext context, GoRouterState state) {
       logV("redirect: ${state.matchedLocation}");
