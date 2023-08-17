@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:mvc/base/base_page.dart';
 
 import 'template_controller.dart';
@@ -9,7 +8,7 @@ class TemplatePage extends BasePage<TemplateController, TemplateModel> {
   const TemplatePage({super.key});
 
   @override
-  TemplateController putController() => Get.put(TemplateController());
+  TemplateController get binding => TemplateController();
 
   @override
   Widget? get appBar => AppBar(

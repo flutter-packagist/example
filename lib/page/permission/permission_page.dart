@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:mvc/base/base_page.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -10,7 +9,7 @@ class PermissionPage extends BasePage<PermissionController, PermissionModel> {
   const PermissionPage({super.key});
 
   @override
-  PermissionController putController() => Get.put(PermissionController());
+  PermissionController get binding => PermissionController();
 
   @override
   Widget? get appBar => AppBar(

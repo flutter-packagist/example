@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:mvc/base/base_page.dart';
 
 import 'database_controller.dart';
@@ -9,7 +8,7 @@ class DatabasePage extends BasePage<DatabaseController, DatabaseModel> {
   const DatabasePage({super.key});
 
   @override
-  DatabaseController putController() => Get.put(DatabaseController());
+  DatabaseController get binding => DatabaseController();
 
   @override
   Widget? get appBar => AppBar(

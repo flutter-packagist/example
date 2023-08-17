@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:mvc/base/base_page.dart';
 
 import 'arguments_set_controller.dart';
@@ -10,7 +9,7 @@ class ArgumentsSetPage
   const ArgumentsSetPage({super.key});
 
   @override
-  ArgumentsSetController putController() => Get.put(ArgumentsSetController());
+  ArgumentsSetController get binding => ArgumentsSetController();
 
   @override
   Widget? get appBar => AppBar(

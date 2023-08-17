@@ -23,5 +23,6 @@ class MainModel extends BaseModel {
     "下拉刷新和上拉加载更多": Routes.refresh,
     "数据库操作": Routes.database,
     "事件防抖和节流": Routes.gesture,
+    "重复push同个页面": Routes.repeat,
   };
 }

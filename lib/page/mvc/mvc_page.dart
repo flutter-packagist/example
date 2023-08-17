@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:mvc/base/base_page.dart';
 
 import 'mvc_controller.dart';
@@ -11,7 +10,7 @@ class MvcPage extends BasePage<MvcController, MvcModel> {
   const MvcPage({super.key});
 
   @override
-  MvcController putController() => Get.put(MvcController());
+  MvcController get binding => MvcController();
 
   @override
   Color get backgroundColor => Colors.white;

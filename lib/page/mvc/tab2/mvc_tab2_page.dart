@@ -9,7 +9,7 @@ class MvcTab2Page extends BasePage<MvcTab2Controller, MvcTab2Model> {
   const MvcTab2Page({super.key});
 
   @override
-  MvcTab2Controller putController() => Get.put(MvcTab2Controller());
+  MvcTab2Controller get binding => MvcTab2Controller();
 
   @override
   Color get backgroundColor => Colors.white;

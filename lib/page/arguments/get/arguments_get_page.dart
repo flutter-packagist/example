@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:mvc/base/base_page.dart';
 
 import 'arguments_get_controller.dart';
 import 'arguments_get_model.dart';
 
-class ArgumentsGetPage extends BasePage<ArgumentsGetController, ArgumentsGetModel> {
+class ArgumentsGetPage
+    extends BasePage<ArgumentsGetController, ArgumentsGetModel> {
   const ArgumentsGetPage({super.key});
 
   @override
-  ArgumentsGetController putController() => Get.put(ArgumentsGetController());
+  ArgumentsGetController get binding => ArgumentsGetController();
 
   @override
   Widget? get appBar => AppBar(

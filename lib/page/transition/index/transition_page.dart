@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:mvc/base/base_page.dart';
 
 import 'transition_controller.dart';
@@ -9,7 +8,7 @@ class TransitionPage extends BasePage<TransitionController, TransitionModel> {
   const TransitionPage({super.key});
 
   @override
-  TransitionController putController() => Get.put(TransitionController());
+  TransitionController get binding => TransitionController();
 
   @override
   Widget? get appBar => AppBar(

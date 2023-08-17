@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:mvc/base/base_page.dart';
 
 import 'main_controller.dart';
@@ -9,7 +8,7 @@ class MainPage extends BasePage<MainController, MainModel> {
   const MainPage({super.key});
 
   @override
-  MainController putController() => Get.put(MainController());
+  MainController get binding => MainController();
 
   @override
   Color get backgroundColor => Colors.white;

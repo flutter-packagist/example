@@ -41,6 +41,10 @@ dependencies:
   widgets:
     path: ../widgets
 
+dependency_overrides:
+  log_wrapper:
+    path: ../log_wrapper
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

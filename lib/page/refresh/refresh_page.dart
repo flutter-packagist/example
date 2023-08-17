@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:log_wrapper/log/log.dart';
 import 'package:mvc/base/base_page.dart';
 import 'package:widgets/widgets.dart';
@@ -11,7 +10,7 @@ class RefreshPage extends BasePage<RefreshController, RefreshModel> {
   const RefreshPage({super.key});
 
   @override
-  RefreshController putController() => Get.put(RefreshController());
+  RefreshController get binding => RefreshController();
 
   @override
   Widget? get appBar => AppBar(

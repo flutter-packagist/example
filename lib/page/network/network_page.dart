@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:mvc/base/base_page.dart';
 
 import 'network_controller.dart';
@@ -9,7 +8,7 @@ class NetworkPage extends BasePage<NetworkController, NetworkModel> {
   const NetworkPage({super.key});
 
   @override
-  NetworkController putController() => Get.put(NetworkController());
+  NetworkController get binding => NetworkController();
 
   @override
   Widget? get appBar => AppBar(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:mvc/base/base_page.dart';
 
 import 'detail_controller.dart';
@@ -11,7 +10,7 @@ class DetailPage extends BasePage<DetailController, DetailModel> {
   const DetailPage(this.title, {super.key});
 
   @override
-  DetailController putController() => Get.put(DetailController());
+  DetailController get binding => DetailController();
 
   @override
   Widget get body {

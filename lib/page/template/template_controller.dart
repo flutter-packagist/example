@@ -7,7 +7,15 @@ class TemplateController extends BaseController<TemplateModel> {
   TemplateModel model = TemplateModel();
 }
 
-extension Data on TemplateController {}
+extension Private on TemplateController {}
+
+extension GetData on TemplateController {}
+
+extension SetData on TemplateController {
+  void ss() {
+    update(["ss"]);
+  }
+}
 
 extension Action on TemplateController {}
 

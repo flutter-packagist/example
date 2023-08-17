@@ -1,6 +1,5 @@
 import 'package:extensions/gesture_extension.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:mvc/base/base_page.dart';
 
 import 'gesture_controller.dart';
@@ -10,7 +9,7 @@ class GesturePage extends BasePage<GestureController, GestureModel> {
   const GesturePage({super.key});
 
   @override
-  GestureController putController() => Get.put(GestureController());
+  GestureController get binding => GestureController();
 
   @override
   Widget? get appBar => AppBar(

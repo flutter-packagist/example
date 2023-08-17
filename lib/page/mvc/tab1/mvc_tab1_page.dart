@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:mvc/base/base_page.dart';
 
 import 'mvc_tab1_controller.dart';
@@ -9,7 +8,7 @@ class MvcTab1Page extends BaseStatusPage<MvcTab1Controller, MvcTab1Model> {
   const MvcTab1Page({super.key});
 
   @override
-  MvcTab1Controller putController() => Get.put(MvcTab1Controller());
+  MvcTab1Controller get binding => MvcTab1Controller();
 
   @override
   Color get backgroundColor => Colors.white;
