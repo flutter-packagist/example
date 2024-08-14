@@ -31,6 +31,8 @@ abstract class Routes {
   static const argumentsParams = "${Paths.arguments}/${Paths.argumentsParams}";
   static const argumentsPath = "${Paths.arguments}/${Paths.argumentsPath}";
   static const argumentsQuery = "${Paths.arguments}/${Paths.argumentsQuery}";
+  static const argumentsReplace = "${Paths.arguments}/${Paths.argumentsReplace}";
+  static const argumentsReplace1 = Paths.argumentsReplace1;
   static const dialog = Paths.dialog;
   static const redirect = Paths.redirect;
   static const notFound = Paths.notFound;
@@ -73,6 +75,8 @@ abstract class Paths {
   static const argumentsParams = 'params';
   static const argumentsPath = 'path/:title/:url';
   static const argumentsQuery = 'query';
+  static const argumentsReplace = 'replace';
+  static const argumentsReplace1 = '/replace1';
   static const dialog = '/dialog';
   static const redirect = '/redirect';
   static const notFound = '/404';

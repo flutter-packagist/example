@@ -1,7 +1,6 @@
 import 'package:example/routes/app_pages.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
-import 'package:route/route/route_extension.dart';
 
 import '../detail/detail_page.dart';
 import 'tab_navigator_native.dart';
@@ -9,22 +8,29 @@ import 'tab_navigator_web.dart';
 
 RouteBase tabNavigatorRoute() {
   if (GetPlatform.isWeb) {
-    return statefulShellRoute(
+    return StatefulShellRoute(
+      builder: (context, state, navigationShell) => navigationShell,
       navigatorContainerBuilder: (context, navigationShell, children) =>
           TabNavigatorWeb(navigationShell, children),
       branches: <StatefulShellBranch>[
         StatefulShellBranch(routes: <GoRoute>[
-          goRoute(path: Paths.tab1, child: const DetailPage("Tab1")),
+          GoRoute(
+            path: Paths.tab1,
+            builder: (context, state) => const DetailPage("Tab1"),
+          ),
         ]),
         StatefulShellBranch(routes: <GoRoute>[
-          goRoute(path: Paths.tab2, child: const DetailPage("Tab2")),
+          GoRoute(
+            path: Paths.tab2,
+            builder: (context, state) => const DetailPage("Tab2"),
+          ),
         ]),
       ],
     );
   }
-  return goRoute(
+  return GoRoute(
     path: Paths.tab,
-    child: const TabNavigatorNative([
+    builder: (context, state) => const TabNavigatorNative([
       DetailPage("Tab1"),
       DetailPage("Tab2"),
     ]),

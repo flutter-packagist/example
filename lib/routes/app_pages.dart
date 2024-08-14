@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:log_wrapper/log/log.dart';
 import 'package:route/route.dart';
-import 'package:route/route/route_transition.dart';
 
 import '../page/arguments/get/arguments_get_page.dart';
 import '../page/arguments/set/arguments_set_page.dart';
@@ -38,110 +36,179 @@ class AppPages {
     ],
     initialLocation: Paths.main,
     routes: <RouteBase>[
-      goRoute(path: Paths.main, child: const MainPage()),
-      goRoute(path: Paths.mvc, child: const MvcPage()),
-      goRoute(path: Paths.transition, child: const TransitionPage(), routes: [
-        goRoute(
-          path: Paths.none,
-          child: const TransitionNextPage(),
-          transitionType: PageTransitionType.none,
-        ),
-        goRoute(
-          path: Paths.fade,
-          child: const TransitionNextPage(),
-          transitionType: PageTransitionType.fade,
-        ),
-        goRoute(
-          path: Paths.scale,
-          child: const TransitionNextPage(),
-          transitionType: PageTransitionType.scale,
-        ),
-        goRoute(
-          path: Paths.rotate,
-          child: const TransitionNextPage(),
-          transitionType: PageTransitionType.rotate,
-        ),
-        goRoute(
-          path: Paths.size,
-          child: const TransitionNextPage(),
-          transitionType: PageTransitionType.size,
-        ),
-        goRoute(
-          path: Paths.right,
-          child: const TransitionNextPage(),
-          transitionType: PageTransitionType.right,
-        ),
-        goRoute(
-          path: Paths.left,
-          child: const TransitionNextPage(),
-          transitionType: PageTransitionType.left,
-        ),
-        goRoute(
-          path: Paths.top,
-          child: const TransitionNextPage(),
-          transitionType: PageTransitionType.top,
-        ),
-        goRoute(
-          path: Paths.bottom,
-          child: const TransitionNextPage(),
-          transitionType: PageTransitionType.bottom,
-        ),
-        goRoute(
-          path: Paths.rightFade,
-          child: const TransitionNextPage(),
-          transitionType: PageTransitionType.rightFade,
-        ),
-        goRoute(
-          path: Paths.leftFade,
-          child: const TransitionNextPage(),
-          transitionType: PageTransitionType.leftFade,
-        ),
-      ]),
-      goRoute(path: Paths.arguments, child: const ArgumentsSetPage(), routes: [
-        goRoute(
-          name: "namePushParams",
-          path: Paths.argumentsParams,
-          child: const ArgumentsGetPage(),
-        ),
-        goRoute(
-          name: "namePushPath",
-          path: Paths.argumentsPath,
-          child: const ArgumentsGetPage(),
-        ),
-        goRoute(
-          name: "namePushQuery",
-          path: Paths.argumentsQuery,
-          child: const ArgumentsGetPage(),
-        ),
-        goRoute(
-          name: "nameGoParams",
-          path: Paths.argumentsParams,
-          child: const ArgumentsGetPage(),
-        ),
-        goRoute(
-          name: "nameGoPath",
-          path: Paths.argumentsPath,
-          child: const ArgumentsGetPage(),
-        ),
-        goRoute(
-          name: "nameGoQuery",
-          path: Paths.argumentsQuery,
-          child: const ArgumentsGetPage(),
-        ),
-      ]),
+      GoRoute(path: Paths.main, builder: (context, state) => const MainPage()),
+      GoRoute(path: Paths.mvc, builder: (context, state) => const MvcPage()),
+      GoRoute(
+          path: Paths.transition,
+          builder: (context, state) => const TransitionPage(),
+          routes: [
+            GoRoute(
+              path: Paths.none,
+              builder: (context, state) => const TransitionNextPage(),
+            ),
+            GoRoute(
+              path: Paths.fade,
+              pageBuilder: (context, state) => FadeTransitionPage(
+                key: state.pageKey,
+                name: state.name,
+                child: const TransitionNextPage(),
+              ),
+            ),
+            GoRoute(
+              path: Paths.scale,
+              pageBuilder: (context, state) => ScaleTransitionPage(
+                key: state.pageKey,
+                name: state.name,
+                child: const TransitionNextPage(),
+              ),
+            ),
+            GoRoute(
+              path: Paths.rotate,
+              pageBuilder: (context, state) => RotateTransitionPage(
+                key: state.pageKey,
+                name: state.name,
+                child: const TransitionNextPage(),
+              ),
+            ),
+            GoRoute(
+              path: Paths.size,
+              pageBuilder: (context, state) => SizeTransitionPage(
+                key: state.pageKey,
+                name: state.name,
+                child: const TransitionNextPage(),
+              ),
+            ),
+            GoRoute(
+              path: Paths.right,
+              pageBuilder: (context, state) => RightToLeftTransitionPage(
+                key: state.pageKey,
+                name: state.name,
+                child: const TransitionNextPage(),
+              ),
+            ),
+            GoRoute(
+              path: Paths.left,
+              pageBuilder: (context, state) => LeftToRightTransitionPage(
+                key: state.pageKey,
+                name: state.name,
+                child: const TransitionNextPage(),
+              ),
+            ),
+            GoRoute(
+              path: Paths.top,
+              pageBuilder: (context, state) => TopToBottomTransitionPage(
+                key: state.pageKey,
+                name: state.name,
+                child: const TransitionNextPage(),
+              ),
+            ),
+            GoRoute(
+              path: Paths.bottom,
+              pageBuilder: (context, state) => BottomToTopTransitionPage(
+                key: state.pageKey,
+                name: state.name,
+                child: const TransitionNextPage(),
+              ),
+            ),
+            GoRoute(
+              path: Paths.rightFade,
+              pageBuilder: (context, state) =>
+                  RightToLeftWithFadeTransitionPage(
+                key: state.pageKey,
+                name: state.name,
+                child: const TransitionNextPage(),
+              ),
+            ),
+            GoRoute(
+              path: Paths.leftFade,
+              pageBuilder: (context, state) =>
+                  LeftToRightWithFadeTransitionPage(
+                key: state.pageKey,
+                name: state.name,
+                child: const TransitionNextPage(),
+              ),
+            ),
+          ]),
+      GoRoute(
+          path: Paths.arguments,
+          builder: (context, state) => const ArgumentsSetPage(),
+          routes: [
+            GoRoute(
+              name: "namePushParams",
+              path: Paths.argumentsParams,
+              builder: (context, state) => const ArgumentsGetPage(),
+            ),
+            GoRoute(
+              name: "namePushPath",
+              path: Paths.argumentsPath,
+              builder: (context, state) => const ArgumentsGetPage(),
+            ),
+            GoRoute(
+              name: "namePushQuery",
+              path: Paths.argumentsQuery,
+              builder: (context, state) => const ArgumentsGetPage(),
+            ),
+            GoRoute(
+              name: "nameGoParams",
+              path: Paths.argumentsParams,
+              builder: (context, state) => const ArgumentsGetPage(),
+            ),
+            GoRoute(
+              name: "nameGoPath",
+              path: Paths.argumentsPath,
+              builder: (context, state) => const ArgumentsGetPage(),
+            ),
+            GoRoute(
+              name: "nameGoQuery",
+              path: Paths.argumentsQuery,
+              builder: (context, state) => const ArgumentsGetPage(),
+            ),
+            GoRoute(
+              path: Paths.argumentsReplace,
+              builder: (context, state) => const ArgumentsGetPage(),
+            ),
+          ]),
+      GoRoute(
+        path: Paths.argumentsReplace1,
+        builder: (context, state) => const ArgumentsGetPage(),
+      ),
       tabNavigatorRoute(),
       pageNavigatorRoute(),
       stackNavigatorRoute(),
       shellNavigatorRoute(),
-      goRoute(path: Paths.dialog, child: const DialogPage()),
-      goRoute(path: Paths.redirect, child: const RedirectPage()),
-      goRoute(path: Paths.notFound, child: const NotFoundPage()),
-      goRoute(path: Paths.network, child: const NetworkPage()),
-      goRoute(path: Paths.permission, child: const PermissionPage()),
-      goRoute(path: Paths.refresh, child: const RefreshPage()),
-      goRoute(path: Paths.database, child: const DatabasePage()),
-      goRoute(path: Paths.gesture, child: const GesturePage()),
-      goRoute(path: Paths.repeat, child: const RepeatPage()),
+      GoRoute(
+        path: Paths.dialog,
+        builder: (context, state) => const DialogPage(),
+      ),
+      GoRoute(
+        path: Paths.redirect,
+        builder: (context, state) => const RedirectPage(),
+      ),
+      GoRoute(
+        path: Paths.notFound,
+        builder: (context, state) => const NotFoundPage(),
+      ),
+      GoRoute(
+        path: Paths.network,
+        builder: (context, state) => const NetworkPage(),
+      ),
+      GoRoute(
+        path: Paths.permission,
+        builder: (context, state) => const PermissionPage(),
+      ),
+      GoRoute(
+        path: Paths.refresh,
+        builder: (context, state) => const RefreshPage(),
+      ),
+      GoRoute(
+        path: Paths.database,
+        builder: (context, state) => const DatabasePage(),
+      ),
+      GoRoute(
+        path: Paths.gesture,
+        builder: (context, state) => const GesturePage(),
+      ),
+      GoRoute(path: Paths.repeat, builder: (context, state) => RepeatPage()),
     ],
     redirect: (BuildContext context, GoRouterState state) {
       logV("redirect: ${state.matchedLocation}");

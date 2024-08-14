@@ -11,22 +11,43 @@ class DialogPage extends StatelessWidget {
         title: const Text('路由监听'),
       ),
       body: Center(
-        child: TextButton(
-          onPressed: () {
-            Go.dialog(
-              AlertDialog(
-                title: const Text('Dialog'),
-                content: const Text('This is a dialog.'),
-                actions: <Widget>[
-                  TextButton(
-                    onPressed: () => Go.back(),
-                    child: const Text('OK'),
+        child: Column(
+          children: [
+            TextButton(
+              onPressed: () {
+                Go.dialog(
+                  AlertDialog(
+                    title: const Text('Dialog'),
+                    content: const Text('This is a dialog.'),
+                    actions: <Widget>[
+                      TextButton(
+                        onPressed: () => Go.back(),
+                        child: const Text('OK'),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            );
-          },
-          child: const Text('Show Dialog'),
+                );
+              },
+              child: const Text('Show Dialog'),
+            ),
+            TextButton(
+              onPressed: () {
+                Go.bottomSheet(
+                  AlertDialog(
+                    title: const Text('bottomSheet'),
+                    content: const Text('This is a dialog.'),
+                    actions: <Widget>[
+                      TextButton(
+                        onPressed: () => Go.back(),
+                        child: const Text('OK'),
+                      ),
+                    ],
+                  ),
+                );
+              },
+              child: const Text('Show bottomSheet'),
+            ),
+          ],
         ),
       ),
     );

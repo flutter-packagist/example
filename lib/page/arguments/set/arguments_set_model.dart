@@ -29,6 +29,8 @@ class ArgumentsSetModel extends BaseModel {
     '路由名称跳转：to name 设置 params': 'nameGoParams',
     '路由名称跳转：to name 设置 queryParams': 'nameGoQuery',
     '路由名称跳转：to name 设置 pathParams': 'nameGoPath',
+    '路由名称跳转：pushReplacement 设置 extras': Routes.argumentsReplace,
+    '路由名称跳转：pushReplacement1 设置 extras': Routes.argumentsReplace1,
   };
 
   final params = {'title': '标题', 'url': '链接'};

@@ -1,7 +1,6 @@
 import 'package:example/routes/app_pages.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
-import 'package:route/route/route_extension.dart';
 import 'package:route/route/route_transition.dart';
 
 import '../detail/detail_page.dart';
@@ -13,22 +12,28 @@ RouteBase shellNavigatorRoute() {
     return ShellRoute(
       builder: (context, state, child) => ShellNavigatorWeb(child),
       routes: <RouteBase>[
-        goRoute(
+        GoRoute(
           path: Paths.shell1,
-          child: const DetailPage("Shell1"),
-          transitionType: PageTransitionType.fade,
+          pageBuilder: (context, state) => FadeTransitionPage(
+            key: state.pageKey,
+            name: state.path,
+            child: const DetailPage("Shell1"),
+          ),
         ),
-        goRoute(
+        GoRoute(
           path: Paths.shell2,
-          child: const DetailPage("Shell2"),
-          transitionType: PageTransitionType.fade,
+          pageBuilder: (context, state) => FadeTransitionPage(
+            key: state.pageKey,
+            name: state.path,
+            child: const DetailPage("Shell2"),
+          ),
         ),
       ],
     );
   }
-  return goRoute(
+  return GoRoute(
     path: Paths.shell,
-    child: const ShellNavigatorNative([
+    builder: (context, state) => const ShellNavigatorNative([
       DetailPage("Shell1"),
       DetailPage("Shell2"),
     ]),

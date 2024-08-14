@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:cache/sp/sp_manager.dart';
 import 'package:example/cache/sp/sp_params.dart';
+import 'package:extensions/cache_extension.dart';
 
 import 'constants.dart';
 
@@ -11,7 +11,7 @@ class EnvConfig {
 
   /// 当前环境 1: release 2: debug 3: dev
   static int get env {
-    int env = SpManager.getInt(SpParams.env);
+    int env = SpParams.env.getInt();
     if (env == 0) return envMode;
     return env;
   }
@@ -24,27 +24,26 @@ class EnvConfig {
 
   /// 网络请求日志打印
   static bool get switchNetworkLog =>
-      SpManager.getBool(SpParams.switchNetworkLog, defaultValue: logNetwork);
+      SpParams.switchNetworkLog.getBool(defaultValue: logNetwork);
 
   /// 本地log日志打印
   static bool get switchLocalLog =>
-      SpManager.getBool(SpParams.switchLocalLog, defaultValue: logLocal);
+      SpParams.switchLocalLog.getBool(defaultValue: logLocal);
 
   /// GetX日志打印
   static bool get switchGetXLog =>
-      SpManager.getBool(SpParams.switchGetXLog, defaultValue: logGetX);
+      SpParams.switchGetXLog.getBool(defaultValue: logGetX);
 
   /// 请求时长日志打印
   static bool get switchDurationLog =>
-      SpManager.getBool(SpParams.switchDurationLog, defaultValue: logDuration);
+      SpParams.switchDurationLog.getBool(defaultValue: logDuration);
 
   /// 是否展示log
   static bool get switchShowLog =>
-      SpManager.getBool(SpParams.switchShowLog, defaultValue: showLog);
+      SpParams.switchShowLog.getBool(defaultValue: showLog);
 
   /// DEV IP
-  static String get devIP =>
-      SpManager.getString(SpParams.envDevIp, defaultValue: devIp);
+  static String get devIP => SpParams.envDevIp.getString(defaultValue: devIp);
 
   /// dev 环境 服务器指向cookie
   static Cookie get devCookie {

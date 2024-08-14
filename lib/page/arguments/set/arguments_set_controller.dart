@@ -72,6 +72,14 @@ extension Action on ArgumentsSetController {
       case 17:
         Go.toNamed("nameGoPath", pathParams: model.params);
         break;
+      case 18:
+        model.params['title'] = '替换标题';
+        Go.pushReplacement(Routes.argumentsReplace, extra: model.params);
+        break;
+      case 19:
+        model.params['title'] = '替换标题1';
+        Go.pushReplacement(Routes.argumentsReplace1, extra: model.params);
+        break;
     }
   }
 }
