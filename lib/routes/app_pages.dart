@@ -3,6 +3,7 @@ import 'package:log_wrapper/log/log.dart';
 import 'package:route/route.dart';
 
 import '../page/arguments/get/arguments_get_page.dart';
+import '../page/arguments/observer/arguments_observer_page.dart';
 import '../page/arguments/set/arguments_set_page.dart';
 import '../page/database/database_page.dart';
 import '../page/gesture/gesture_page.dart';
@@ -20,6 +21,7 @@ import '../page/permission/permission_page.dart';
 import '../page/redirect/redirect_page.dart';
 import '../page/refresh/refresh_page.dart';
 import '../page/repeat/repeat_page.dart';
+import '../page/replace/replace_page.dart';
 import '../page/transition/index/transition_page.dart';
 import '../page/transition/next/transition_next_page.dart';
 
@@ -36,6 +38,10 @@ class AppPages {
     ],
     initialLocation: Paths.main,
     routes: <RouteBase>[
+      GoRoute(
+        path: Paths.replace,
+        builder: (context, state) => const ReplacePage(),
+      ),
       GoRoute(path: Paths.main, builder: (context, state) => const MainPage()),
       GoRoute(path: Paths.mvc, builder: (context, state) => const MvcPage()),
       GoRoute(
@@ -168,6 +174,18 @@ class AppPages {
               builder: (context, state) => const ArgumentsGetPage(),
             ),
           ]),
+      GoRoute(
+        path: Paths.arguments + Paths.observer,
+        builder: (context, state) => const ArgumentsObserverPage(),
+      ),
+      GoRoute(
+        path: "${Paths.arguments}${Paths.observer}/1",
+        builder: (context, state) => const ArgumentsObserverPage1(),
+      ),
+      GoRoute(
+        path: "${Paths.arguments}${Paths.observer}/2",
+        builder: (context, state) => const ArgumentsObserverPage2(),
+      ),
       GoRoute(
         path: Paths.argumentsReplace1,
         builder: (context, state) => const ArgumentsGetPage(),

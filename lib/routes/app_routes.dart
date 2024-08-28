@@ -28,6 +28,7 @@ abstract class Routes {
   static const transitionRightFade = "${Paths.transition}/${Paths.rightFade}";
   static const transitionLeftFade = "${Paths.transition}/${Paths.leftFade}";
   static const arguments = Paths.arguments;
+  static const argumentsObserver = Paths.arguments + Paths.observer;
   static const argumentsParams = "${Paths.arguments}/${Paths.argumentsParams}";
   static const argumentsPath = "${Paths.arguments}/${Paths.argumentsPath}";
   static const argumentsQuery = "${Paths.arguments}/${Paths.argumentsQuery}";
@@ -42,6 +43,7 @@ abstract class Routes {
   static const database = Paths.database;
   static const gesture = Paths.gesture;
   static const repeat = Paths.repeat;
+  static const replace = Paths.replace;
 }
 
 abstract class Paths {
@@ -72,6 +74,7 @@ abstract class Paths {
   static const rightFade = 'rightFade';
   static const leftFade = 'leftFade';
   static const arguments = '/arguments';
+  static const observer = '/observer';
   static const argumentsParams = 'params';
   static const argumentsPath = 'path/:title/:url';
   static const argumentsQuery = 'query';
@@ -86,4 +89,5 @@ abstract class Paths {
   static const database = '/database';
   static const gesture = '/gesture';
   static const repeat = '/repeat';
+  static const replace = '/replace';
 }

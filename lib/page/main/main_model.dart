@@ -14,6 +14,7 @@ class MainModel extends BaseModel {
     "路由 Navigator 2.0（ShellRoute）: 匹配路由路径切换":
         GetPlatform.isWeb ? Routes.shell1 : Routes.shell,
     "路由参数传递": Routes.arguments,
+    "路由参数传递及参数监听": Routes.argumentsObserver,
     "页面调整动画": Routes.transition,
     "页面路由监听": Routes.dialog,
     "路由拦截和重定向": Routes.redirect,
@@ -24,5 +25,6 @@ class MainModel extends BaseModel {
     "数据库操作": Routes.database,
     "事件防抖和节流": Routes.gesture,
     "重复push同个页面": Routes.repeat,
+    "replace页面": Routes.replace,
   };
 }
