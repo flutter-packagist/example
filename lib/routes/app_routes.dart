@@ -44,6 +44,7 @@ abstract class Routes {
   static const gesture = Paths.gesture;
   static const repeat = Paths.repeat;
   static const replace = Paths.replace;
+  static const button = Paths.button;
 }
 
 abstract class Paths {
@@ -90,4 +91,5 @@ abstract class Paths {
   static const gesture = '/gesture';
   static const repeat = '/repeat';
   static const replace = '/replace';
+  static const button = '/button';
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mvc/base/base_page.dart';
+import 'package:packagist_mvc/mvc.dart';
 
 import 'mvc_tab1_controller.dart';
 import 'mvc_tab1_model.dart';

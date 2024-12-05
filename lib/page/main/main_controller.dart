@@ -1,6 +1,6 @@
 import 'package:example/routes/app_pages.dart';
-import 'package:mvc/base/base_controller.dart';
-import 'package:route/route/go_navigator.dart';
+import 'package:packagist_mvc/mvc.dart';
+import 'package:packagist_route/route.dart';
 
 import 'main_model.dart';
 

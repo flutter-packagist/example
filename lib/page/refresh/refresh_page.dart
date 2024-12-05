@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:log_wrapper/log/log.dart';
-import 'package:mvc/base/base_page.dart';
-import 'package:widgets/widgets.dart';
+import 'package:packagist_mvc/mvc.dart';
+import 'package:packagist_widgets/widgets.dart';
 
 import 'refresh_controller.dart';
 import 'refresh_model.dart';

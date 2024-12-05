@@ -1,4 +1,4 @@
-import 'package:mvc/base/base_controller.dart';
+import 'package:packagist_mvc/mvc.dart';
 
 import 'arguments_observer_model.dart';
 

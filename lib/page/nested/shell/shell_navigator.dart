@@ -1,7 +1,6 @@
 import 'package:example/routes/app_pages.dart';
 import 'package:get/get.dart';
-import 'package:go_router/go_router.dart';
-import 'package:route/route/route_transition.dart';
+import 'package:packagist_route/route.dart';
 
 import '../detail/detail_page.dart';
 import 'shell_navigator_native.dart';

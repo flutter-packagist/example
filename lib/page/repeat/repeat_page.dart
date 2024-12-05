@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mvc/base/base_page.dart';
+import 'package:packagist_mvc/mvc.dart';
 
 import 'repeat_controller.dart';
 import 'repeat_model.dart';

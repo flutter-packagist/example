@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:example/cache/sp/sp_params.dart';
-import 'package:extensions/cache_extension.dart';
+import 'package:packagist_extensions/extensions.dart';
 
 import 'constants.dart';
 

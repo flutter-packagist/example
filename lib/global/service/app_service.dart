@@ -1,10 +1,10 @@
 import 'package:example/global/config/constants.dart';
 import 'package:example/global/config/env_config.dart';
-import 'package:extensions/cache_extension.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:get/get.dart';
 import 'package:log_wrapper/log/log.dart';
-import 'package:network/network.dart';
+import 'package:packagist_extensions/extensions.dart';
+import 'package:packagist_network/network.dart';
 
 class AppService {
   static Future<void> init() async {

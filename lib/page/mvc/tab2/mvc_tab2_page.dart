@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mvc/base/base_page.dart';
+import 'package:packagist_mvc/mvc.dart';
 
 import 'mvc_tab2_controller.dart';
 import 'mvc_tab2_model.dart';

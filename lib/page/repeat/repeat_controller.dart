@@ -2,8 +2,8 @@ import 'package:example/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:log_wrapper/log/log.dart';
-import 'package:mvc/base/base_controller.dart';
-import 'package:route/route/go_navigator.dart';
+import 'package:packagist_mvc/mvc.dart';
+import 'package:packagist_route/route.dart';
 
 import 'repeat_model.dart';
 import 'repeat_page.dart';

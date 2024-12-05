@@ -1,3 +1,3 @@
 import 'package:packagist_mvc/mvc.dart';
 
-class ReplaceModel extends BaseModel {}
+class ButtonModel extends BaseModel {}

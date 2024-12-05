@@ -1,4 +1,4 @@
-import 'package:mvc/base/base_model.dart';
+import 'package:packagist_mvc/mvc.dart';
 
 class NetworkModel extends BaseModel {
   String description = '''

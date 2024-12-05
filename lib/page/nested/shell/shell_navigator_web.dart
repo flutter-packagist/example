@@ -1,7 +1,7 @@
 import 'package:example/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:route/route.dart';
+import 'package:packagist_route/route.dart';
 
 class ShellNavigatorWeb extends StatelessWidget {
   final Widget child;

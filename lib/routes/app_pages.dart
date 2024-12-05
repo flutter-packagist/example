@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:log_wrapper/log/log.dart';
-import 'package:route/route.dart';
+import 'package:packagist_route/route.dart';
 
 import '../page/arguments/get/arguments_get_page.dart';
 import '../page/arguments/observer/arguments_observer_page.dart';
 import '../page/arguments/set/arguments_set_page.dart';
+import '../page/button/button_page.dart';
 import '../page/database/database_page.dart';
 import '../page/gesture/gesture_page.dart';
 import '../page/main/main_page.dart';
@@ -226,7 +227,14 @@ class AppPages {
         path: Paths.gesture,
         builder: (context, state) => const GesturePage(),
       ),
-      GoRoute(path: Paths.repeat, builder: (context, state) => RepeatPage()),
+      GoRoute(
+        path: Paths.repeat,
+        builder: (context, state) => RepeatPage(),
+      ),
+      GoRoute(
+        path: Paths.button,
+        builder: (context, state) => const ButtonPage(),
+      ),
     ],
     redirect: (BuildContext context, GoRouterState state) {
       logV("redirect: ${state.matchedLocation}");

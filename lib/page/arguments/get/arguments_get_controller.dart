@@ -1,5 +1,5 @@
-import 'package:mvc/base/base_controller.dart';
-import 'package:route/route.dart';
+import 'package:packagist_mvc/mvc.dart';
+import 'package:packagist_route/route.dart';
 
 import 'arguments_get_model.dart';
 

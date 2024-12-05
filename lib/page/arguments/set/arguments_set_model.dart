@@ -1,5 +1,5 @@
 import 'package:example/routes/app_pages.dart';
-import 'package:mvc/base/base_model.dart';
+import 'package:packagist_mvc/mvc.dart';
 
 class ArgumentsSetModel extends BaseModel {
   String description = '''

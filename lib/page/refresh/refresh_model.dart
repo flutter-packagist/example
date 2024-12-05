@@ -1,6 +1,6 @@
-import 'package:mvc/base/base_model.dart';
-import 'package:network/network.dart';
-import 'package:widgets/widgets.dart';
+import 'package:packagist_mvc/mvc.dart';
+import 'package:packagist_network/network.dart';
+import 'package:packagist_widgets/widgets.dart';
 
 class RefreshModel extends BaseModel {
   final RefreshNotifier<ItemModel> refreshNotifier =

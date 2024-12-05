@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:mvc/base/base_model.dart';
+import 'package:packagist_mvc/mvc.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class PermissionModel extends BaseModel {

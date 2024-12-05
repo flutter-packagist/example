@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:route/route.dart';
+import 'package:packagist_route/route.dart';
 
 class DialogPage extends StatelessWidget {
   const DialogPage({super.key});

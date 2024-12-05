@@ -14,41 +14,53 @@ dependencies:
     sdk: flutter
 
   easy_refresh: 3.4.0
-  dio: 5.4.3+1
-  drift: 2.19.1+1
+  dio: 5.7.0
+  drift: 2.22.1
   flutter_screenutil: 5.9.3
-  file_picker: 8.0.7
+  file_picker: 8.1.4
   get: 4.6.6
   go_router: 14.2.3
   oktoast: 3.4.0
   path: 1.9.0
-  path_provider: 2.1.3
+  path_provider: 2.1.4
   permission_handler: 11.3.1
   sqlite3_flutter_libs: 0.5.24
   url_launcher: 6.3.0
   log_wrapper:
     path: ../log_wrapper
-  mvc:
+  packagist_mvc:
     path: ../mvc
-  network:
+  packagist_network:
     path: ../network
-  route:
+  packagist_route:
     path: ../route
-  extensions:
+  packagist_extensions:
     path: ../extensions
-  widgets:
+  packagist_widgets:
     path: ../widgets
+
+  ll_dropdown_menu: 0.6.2
 
 dependency_overrides:
   log_wrapper:
     path: ../log_wrapper
+  packagist_mvc:
+    path: ../mvc
+  packagist_network:
+    path: ../network
+  packagist_route:
+    path: ../route
+  packagist_extensions:
+    path: ../extensions
+  packagist_widgets:
+    path: ../widgets
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: 2.0.0
-  drift_dev: 2.19.1
-  build_runner: 2.4.6
+  drift_dev: 2.22.1
+  build_runner: 2.4.10
 
 flutter:
   uses-material-design: true

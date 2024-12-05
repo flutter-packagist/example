@@ -1,9 +1,9 @@
-import 'package:extensions/permission_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:log_wrapper/log/log.dart';
-import 'package:mvc/base/base_controller.dart';
+import 'package:packagist_extensions/extensions.dart';
+import 'package:packagist_mvc/mvc.dart';
+import 'package:packagist_route/route.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:route/route.dart';
 
 import 'permission_model.dart';
 
@@ -14,6 +14,13 @@ class PermissionController extends BaseController<PermissionModel> {
   @override
   void onReady() {
     super.onReady();
+    PermissionContext.init(
+      context,
+      title: "授權失敗",
+      description: (text) => "請前往設置中心開啟$text權限",
+      cancelText: "取消",
+      confirmText: "前往",
+    );
     initPermissionStatus();
   }
 

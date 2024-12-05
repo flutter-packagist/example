@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mvc/base/base_page.dart';
+import 'package:packagist_mvc/mvc.dart';
 
 import 'arguments_get_controller.dart';
 import 'arguments_get_model.dart';

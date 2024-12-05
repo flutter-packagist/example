@@ -1,8 +1,8 @@
 import 'package:example/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:log_wrapper/log/log.dart';
-import 'package:mvc/base/base_page.dart';
-import 'package:route/route.dart';
+import 'package:packagist_mvc/mvc.dart';
+import 'package:packagist_route/route.dart';
 
 import 'arguments_observer_controller.dart';
 import 'arguments_observer_model.dart';

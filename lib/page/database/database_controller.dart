@@ -1,9 +1,9 @@
 import 'package:drift/drift.dart';
 import 'package:example/cache/db/database.dart';
 import 'package:example/cache/db/db_instance.dart';
-import 'package:mvc/base/base_controller.dart';
+import 'package:packagist_mvc/mvc.dart';
 import 'package:oktoast/oktoast.dart';
-import 'package:route/route/go_navigator.dart';
+import 'package:packagist_route/route.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'database_model.dart';

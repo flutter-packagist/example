@@ -33,6 +33,7 @@ migrate_working_dir/
 /build/
 *.lock
 .fvm/
+.fvmrc
 
 # Symbolication related
 app.*.symbols

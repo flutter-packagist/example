@@ -1,6 +1,6 @@
 import 'package:example/routes/app_pages.dart';
 import 'package:get/get.dart';
-import 'package:mvc/base/base_model.dart';
+import 'package:packagist_mvc/mvc.dart';
 
 class MainModel extends BaseModel {
   Map<String, String> routes = {
@@ -26,5 +26,6 @@ class MainModel extends BaseModel {
     "事件防抖和节流": Routes.gesture,
     "重复push同个页面": Routes.repeat,
     "replace页面": Routes.replace,
+    "Button页面": Routes.button,
   };
 }
